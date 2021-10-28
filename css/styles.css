@@ -1,0 +1,32 @@
+:root  {
+  --headings: #ada5df;
+  --body-background-color:  #f3f6f4;
+}
+
+body  {
+  background-color: var(--body-background-color);
+  font-family:  'Merriweather', serif;
+  line-height: 1.5;
+}
+
+.page-header  {
+  display: flex;
+  padding: 0;
+  height: 200px;
+  width: 100%;
+  }
+
+.page-header__logo  {
+  padding: 25px;
+  width:  175px;
+  height: 175px;
+}
+
+h1  {
+  font-size: 40px;
+  color: var(--headings);
+}
+
+.pokemon-list  {
+  padding-left: 20px;
+}
