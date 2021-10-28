@@ -6,7 +6,7 @@ let pokemonList = [
   {name:'Geodude', height: 4, type: ['rock']}
 ]
 
-//list pokepeoples by name and height
+//list pokepeoples with name and height
 document.write('<ul>')
 for (let i = 0; i < pokemonList.length; i++)  {
   document.write( `<li> ${pokemonList[i].name} - height: ${pokemonList[i].height} </li>` );
