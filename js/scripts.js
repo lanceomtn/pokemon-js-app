@@ -6,12 +6,12 @@ let pokemonList = [
   {name:'Geodude', height: 4, type: ['rock']}
 ]
 
-//list pokepeoples with name and height
-document.write('<ul>')
-for (let i = 0; i < pokemonList.length; i++)  {
-  document.write( `<li> ${pokemonList[i].name} - height: ${pokemonList[i].height} </li>` );
-//evaluate if pokemon excedes certain height and write message if true
-  if (pokemonList[i].height > 2.0){ document.write(" - Wow that is a tall pokemon!");
-  }
-}
-document.write('</ul>')
+pokemonList.forEach(function(pokemon) {
+  if (pokemon.height > 2.0) {
+      document.write('<li>'+ pokemon.name + ' - height: '  +  pokemon.height + ' '
+    + ' - Wow, that is a tall Pokemon! </li>');
+  }else {
+    document.write('<li>'+ pokemon.name + '  - height: ' +  pokemon.height +'  </li>');
+
+    }
+})
