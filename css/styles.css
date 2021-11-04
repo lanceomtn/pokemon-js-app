@@ -1,26 +1,27 @@
 :root  {
   --headings: #ada5df;
   --body-background-color:  #f3f6f4;
-  --button-background-color:  #D4EBBF
+  --button-background-color:  #D4EBBF;
+  --header-background-color:  #000;
 }
 
 body  {
   background-color: var(--body-background-color);
   font-family:  'Merriweather', serif;
-  line-height: 1.5;
-}
-
-.page-header  {
-  display: flex;
-  padding: 0;
-  height: 200px;
-  width: 100%;
   }
 
+.page-header  {
+  background-color: var(--header-background-color);
+  display: flex;
+  padding: 0;
+  height: 100px;
+  width: 100%;
+}
+
 .page-header__logo  {
-  padding: 25px;
-  width:  175px;
-  height: 175px;
+  padding: 10px;
+  width:  75px;
+  height: 75px;
 }
 
 h1  {
@@ -28,17 +29,84 @@ h1  {
   color: var(--headings);
 }
 
-.button-class {
-  background-color: var(--button-background-color);
-  color: black;
-  padding: 5px 20px;
+.pokemon-list  {
+  display: grid;
   text-align: center;
-  text-decoration: none;
+  list-style: none;
+  }
+
+.format-button  {
+  background-color: var(--button-background-color);
+  height: 75px;
+  width: 200px;
+  font-size: 20px;
+}
+
+#modal-container {
+  position: fixed;
+  padding: 50px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999; /* to show it above other content */
+  overflow: auto; /* to allow scrolling if the screen is not high enough*/
+  display: grid; /* this is used to center the modal */
+  text-align: center; /* this is used to center the modal */
+  align-items: center;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.modal {
+  margin: auto;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border: 2px solid
+  box-sizing: border-box;
+  background-color: white;
+  padding: 15px;
+  width: 100%;
+  max-height: 500px;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+ }
+
+.modal h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#modal-container {
+  display: none;
+  align-items: center;
+}
+
+#modal-container.is-visible {
+  display: block;
+}
+
+@media all and (max-width: 550px) {
+  .pokemon-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .button-format  {
+    width: 80%;
+  }
 }
