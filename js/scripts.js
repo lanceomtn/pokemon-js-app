@@ -159,7 +159,6 @@ window.addEventListener('keydown', (e) => {
     showModal('Modal title', 'This is the modal content!');
 });//end of the modal code
 
-
     return {
       add: add,
       getAll: getAll,
