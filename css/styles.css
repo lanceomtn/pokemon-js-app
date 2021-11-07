@@ -1,45 +1,54 @@
 :root  {
-  --headings: #ada5df;
+  font-family: 'Pokemon Solid', sans-serif;
   --body-background-color:  #f3f6f4;
-  --button-background-color:  #D4EBBF;
-  --header-background-color:  #000;
-}
+  --pokemon-yellow:  #ffcb05;
+  --pokemon-blue:  #2A75BB;
+  --modal-background: #ffff00;
+  }
 
 body  {
   background-color: var(--body-background-color);
-  font-family:  'Merriweather', serif;
-  }
+}
 
 .page-header  {
-  background-color: var(--header-background-color);
+  background-color: var(--pokemon-blue);
   display: flex;
-  padding: 0;
-  height: 100px;
+  padding: 0px;
+  height: 150px;
   width: 100%;
 }
 
 .page-header__logo  {
-  padding: 10px;
-  width:  75px;
-  height: 75px;
-}
-
-h1  {
-  font-size: 40px;
-  color: var(--headings);
+  width:  300px;
+  height: 140px;
+  padding-left: 15px;
 }
 
 .pokemon-list  {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
   text-align: center;
   list-style: none;
-  }
+}
 
 .format-button  {
-  background-color: var(--button-background-color);
-  height: 75px;
-  width: 200px;
-  font-size: 20px;
+  background-color: var(--pokemon-yellow);
+  color: var(--pokemon-blue);
+  height: 175px;
+  width: 175px;
+  font-size: 25px;
+  transition: .4s;
+  border-radius: 5%;
+  border: 5px solid var(--pokemon-blue);
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  background-color: var(--modal-background);
 }
 
 #modal-container {
@@ -57,22 +66,25 @@ h1  {
   align-items: center;
 }
 
-img {
-  width: 200px;
-  height: 200px;
-}
-
 .modal {
-  margin: auto;
+  clear: both;
   display: inline-block;
   box-sizing: border-box;
-  background-color: white;
-  padding: 15px;
+  padding: 20px;
   width: 100%;
+  background-color: var(--modal-background);
+  color: #2A75BB;
   max-height: 500px;
   max-width: 400px;
   text-align: center;
   border-radius: 5%;
+  border-width: 2px;
+  border-color: var(--pokemon-blue);
+}
+
+.modal-img {
+  width: 200px;
+  height: 200px;
 }
 
 .modal-close {
@@ -80,15 +92,16 @@ img {
   -webkit-appearance: none;
   border: 0;
   background: none;
-  color: #777;
- }
+}
 
 .modal h1 {
+  font-size: 40px;
   margin-top: 0;
   text-align: center;
 }
 
 .modal p {
+  font-size: 20px;
   margin-bottom: 0;
   text-align: center;
 }
@@ -106,7 +119,10 @@ img {
   .pokemon-list {
     grid-template-columns: 1fr 1fr;
   }
-  .button-format  {
-    width: 80%;
+}
+
+@media all and (min-width: 550px) and (max-width: 750px) {
+  .pokemon-list {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
