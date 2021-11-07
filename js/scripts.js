@@ -91,6 +91,7 @@ let modalContainer = document.querySelector('#modal-container');
 
     let pokeImg = document.createElement('img');
     pokeImg.src = pokemon.imageUrl
+    pokeImg.classList.add('modal-img');
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(pokeName);
@@ -144,7 +145,7 @@ let modalContainer = document.querySelector('#modal-container');
 }
 
 document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal('Modal title', 'This is the modal content!');
+  showModal();
 });//end of the modal code
 
 return {
