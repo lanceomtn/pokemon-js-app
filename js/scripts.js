@@ -109,14 +109,14 @@ let pokemonRepository = (function () {
     let imgUrl = pokemon.imageUrl;
     pokeImg.attr('src', imgUrl);
 
-    modalTitle.append(pokeName);
+    modalBody.append(pokeName);
     modalBody.append(pokeHeight);
     modalBody.append(pokeWeight);
     modalBody.append(pokeTypes);
     modalBody.append(pokeImg);
   }  //end of modal code
 
-   return {
+  return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,

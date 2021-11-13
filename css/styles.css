@@ -4,6 +4,7 @@
   --pokemon-yellow:  #ffcb05;
   --pokemon-blue:  #2A75BB;
   --modal-background: #fff999;
+  --hover-color: #9fc5e8;
   }
 
 body  {
@@ -26,15 +27,27 @@ body  {
   list-style: none;
 }
 
+/* fixes for bootstrap styles */
+.list-group-item {
+  padding: 0;
+  border: 0px;
+  background-color: transparent;
+}
+
 .pokemon-button  {
   background-color: var(--pokemon-yellow);
   color: var(--pokemon-blue);
-  height: 175px;
-  width: 175px;
+  min-width: 150px;
   font-size: 25px;
   transition: .4s;
   border-radius: 5%;
   border: 5px solid var(--pokemon-blue);
+  padding: 5px;
+}
+
+.pokemon-button > img {
+  width: 90px;
+  height: 90px;
 }
 
 button:hover,
@@ -42,40 +55,48 @@ button:focus,
 .button:hover,
 .button:focus {
   cursor: pointer;
-  background-color: var(--modal-background);
+  background-color: var(--hover-color);
 }
 
-.modal-body {
-  clear: both;
+h5 {
+  text-transform: capitalize;
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.modal-content {
+  margin: auto;
   display: inline-block;
-  box-sizing: border-box;
-  padding: 20px;
   width: 100%;
-  background-color: var(--modal-background);
+  padding: 10px;
+  background-color: var(--pokemon-yellow);
   color: var(--pokemon-blue);
-  max-height: 400px;
-  max-width: 400px;
+  font-size: 25px;
   text-align: center;
   border-radius: 5%;
-  border-width: 2px;
-  border-color: var(--pokemon-blue);
+  border: 5px solid var(--pokemon-blue);
 }
 
-.modal-header {
-  display: flex;
+.modal-img {
+  max-width: 200px;
+}
+
+.close-button {
+  text-align: center;
+  border-radius: 5%;
+  border: 2px solid var(--pokemon-blue);
+  color: var(--pokemon-blue);
   background-color: white;
-  color: #2A75BB;
-  height: 75px;
 }
 
-.img {
-  width: 200px;
-  height: 200px;
+.modal-footer {
+  border: transparent
 }
 
 @media all and (max-width: 550px) {
   .pokemon-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -83,11 +104,4 @@ button:focus,
   .pokemon-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-/* fixes for bootstrap styles */
-.list-group-item {
-  padding: 0;
-  border: 0px;
-  background-color: transparent;
 }
