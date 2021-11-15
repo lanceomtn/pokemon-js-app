@@ -98,6 +98,11 @@ h5 {
   .pokemon-list {
     grid-template-columns: 1fr;
   }
+  .pokemon-button {
+  width: 225px;
+  height: 225px;
+  }
+
 }
 
 @media all and (min-width: 550px) and (max-width: 750px) {
